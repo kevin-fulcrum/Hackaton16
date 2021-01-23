@@ -1,11 +1,11 @@
 import React from 'react'
 import {} from 'react-native'
-import Cart from './src/screens/Cart'
+import Dettalle from './src/screens/Detalle'
 
 const App=()=>{
   return(
-    <Cart></Cart>
+    <Dettalle></Dettalle>
   )
 };
 
-export default App;
+export default App

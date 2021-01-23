@@ -1,17 +1,18 @@
 import React from 'react'
-import {StyleSheet} from 'react-native'
+import {StyleSheet, View} from 'react-native'
 import CartComponet from '../componet/cart/CartComponet'
 
 const styles=StyleSheet.create({
-   container: {
-       flex: 1
+   cart:{
+
    }
 })
 
 const Cart=()=>{
   return(
     <>
-    <CartComponet styles={styles.container} label={'jgh'}></CartComponet>
+    <CartComponet styles={styles.cart} label={'holis'}></CartComponet>
+    <CartComponet styles={styles.cart} label={'jgh'}></CartComponet>
     </>
   )
 };
