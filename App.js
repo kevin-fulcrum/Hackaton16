@@ -1,10 +1,10 @@
 import React from 'react'
 import {} from 'react-native'
-import Button from './componet/'
+import Cart from './src/componet/cart/CartComponet'
 
-const App=({label,onPress})=>{
+const App=()=>{
   return(
-    <Button></Button>
+    <Cart></Cart>
   )
 };
 
