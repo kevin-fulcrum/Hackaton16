@@ -14,41 +14,50 @@ const ProductSliderItem = ({item, onPress}) => {
   console.warn(item.url)
   const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'white',
-    margin: 10,
+    backgroundColor: 'gray',
+    height: height/3.5,
     borderRadius: 10,
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: 'column',
+    marginTop:80,
+    margin: 20
+    
+  },
+  cont1:{
+    marginBottom:-80,
   },
   image: {
     width: width / 2,
+    height: height/3.2,
     borderRadius: 10,
+    marginLeft:50
   },
   itemTitle: {
-    color: '#212121',
-    fontSize: 13,
+    fontSize: 20,
     fontWeight: 'bold',
+    marginLeft: 20
   },
   itemPrice: {
     color: '#212121',
-    fontSize: 13,
+    fontSize: 20,
     fontWeight: '300',
+    marginLeft: 20
   },
 });
 
   return (
-    <View style={styles.container}>
       <TouchableOpacity onPress={onPress}>
+    <View style={styles.container}>
+      <View style={styles.cont1}></View>
         <Image
           style={styles.image}
           source={{
-            uri: 'https://reactnative.dev/img/tiny_logo.png',
+            uri: item.url,
           }}
         />
-      </TouchableOpacity>
         <Text style={styles.itemTitle}>{item.descripcion}</Text>
-        <Text style={styles.itemPrice}>{item.price}</Text>
+        <Text style={styles.itemPrice}>${item.price}</Text>
     </View>
+      </TouchableOpacity>
   );
 };
 
