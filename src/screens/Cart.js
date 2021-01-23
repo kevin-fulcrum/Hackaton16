@@ -10,7 +10,9 @@ const styles=StyleSheet.create({
 
 const Cart=()=>{
   return(
+    <>
     <CartComponet styles={styles.container} label={'jgh'}></CartComponet>
+    </>
   )
 };
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import {} from 'react-native'
-import Cart from './src/componet/cart/CartComponet'
+import Cart from './src/screens/Cart'
 
 const App=()=>{
   return(
