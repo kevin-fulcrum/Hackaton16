@@ -19,7 +19,6 @@ const styles=StyleSheet.create({
 const Cart=({route})=>{
   const scrollX = new Animated.Value(0);
   const carData = useSelector((state)=>state.ProductReducer);
-  console.warn('ESTE ES?',carData)
   return(
     <>
     <View style={styles.contanier}>
