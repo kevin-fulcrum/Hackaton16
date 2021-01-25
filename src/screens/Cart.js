@@ -1,5 +1,5 @@
 import React from 'react'
-import {StyleSheet, View, Text} from 'react-native'
+import {StyleSheet, View, Text, FlatList, Animated} from 'react-native'
 import CartComponet from '../componet/cart/CartComponet'
 import Button from '../componet/button/Button'
 import { useSelector } from 'react-redux'
@@ -17,13 +17,29 @@ const styles=StyleSheet.create({
 })
 
 const Cart=({route})=>{
+  const scrollX = new Animated.Value(0);
   const carData = useSelector((state)=>state.ProductReducer);
   console.warn('ESTE ES?',carData)
   return(
     <>
     <View style={styles.contanier}>
-    <CartComponet styles={styles.cart} label={route.params.price}></CartComponet>
-    <CartComponet styles={styles.cart} label={route.params.price}></CartComponet>
+    <FlatList
+    data={carData.products}
+    keyExtractor={(item, index) => 'key' + index}
+    vertical
+    scrollEnabled
+    snapToAlignment="center"
+    scrollEventThrottle={16}
+    decelerationRate="fast"
+    showsHorizontalScrollIndicator={false}
+    renderItem={(item) => {
+        return <CartComponet styles={styles.cart} item={item.item}></CartComponet>;
+    }}
+    onScroll={Animated.event([
+        {nativeEvent: {contentOffset: {x: scrollX}}}],
+        {useNativeDriver: false}
+    )}
+    />
     </View>
     <View style={styles.containerEnd}>
       <View style={{flex: 0.5, alignItems: 'center'}}>

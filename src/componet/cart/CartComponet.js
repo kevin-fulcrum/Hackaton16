@@ -5,6 +5,8 @@ import {windowWidth,windowHeight} from '../Dimensions'
 const styles=StyleSheet.create({
   container:{
     alignItems: 'center',
+    marginTop: 80,
+    marginBottom: -50
   },
   cart:{
     width: windowWidth/1.3,
@@ -21,18 +23,17 @@ const styles=StyleSheet.create({
 
 })
 
-const CartComponet=({label})=>{
+const CartComponet=({item})=>{
   return(
     <View style={styles.container}>
     <TouchableOpacity style={styles.cart}>
     <Image
-    style={{width:20, height:20}}
-    source={{uri: 'https://cdn.icon-icons.com/icons2/692/PNG/512/seo-social-web-network-internet_340_icon-icons.com_61497.png',}}
+    style={{width:200, height:200, marginTop: -50, marginLeft: -30}}
+    source={{uri: item.url,}}
     />  
-    <View>
-    <Text style={styles.text}>{label}</Text>
-    <Text style={styles.text}>{label}</Text>
-    <Text style={styles.text}>{label}</Text>
+    <View style={{marginTop: 20}}>
+    <Text style={styles.text}>{item.descripcion}</Text>
+    <Text style={styles.text}>{item.price}</Text>
     </View>
     </TouchableOpacity>
     </View>
