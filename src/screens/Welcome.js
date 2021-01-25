@@ -13,7 +13,7 @@ const { width, height } = Dimensions.get('window')
 const Welcome = ({navigation}) => {
     return(
         <View style={{flex: 1}}>
-            <View style={{ marginLeft:20 , marginTop: 100}}>
+            <View style={{ marginLeft:20 , marginTop: 50}}>
                 <Text style={{fontSize: 23, fontWeight: 'bold'}}>Best Coffe in Town</Text>
             </View>
             <View style={{flex: 0.5}}>
@@ -27,7 +27,7 @@ const Welcome = ({navigation}) => {
                 decelerationRate="fast"
                 showsHorizontalScrollIndicator={false}
                 renderItem={(item) => {
-                    return <ProductSliderItem item={item.item} onPress={()=>{navigation.navigate('Detalle')}}/>;
+                    return <ProductSliderItem item={item.item} onPress={()=>{navigation.navigate('Detalle', item.item)}}/>;
                 }}
                 onScroll={Animated.event([
                     {nativeEvent: {contentOffset: {x: scrollX}}}],
@@ -49,7 +49,7 @@ const Welcome = ({navigation}) => {
                 decelerationRate="fast"
                 showsHorizontalScrollIndicator={false}
                 renderItem={(item) => {
-                    return <ProductSliderItem item={item.item} onPress={onPress}/>;
+                    return <ProductSliderItem item={item.item} onPress={()=>{navigation.navigate('Detalle')}}/>;
                 }}
                 onScroll={Animated.event([
                     {nativeEvent: {contentOffset: {x: scrollX}}}],

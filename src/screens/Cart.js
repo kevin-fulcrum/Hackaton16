@@ -15,16 +15,17 @@ const styles=StyleSheet.create({
   } 
 })
 
-const Cart=()=>{
+const Cart=({route})=>{
+  console.warn(route)
   return(
     <>
     <View style={styles.contanier}>
-    <CartComponet styles={styles.cart} label={'holis'}></CartComponet>
-    <CartComponet styles={styles.cart} label={'jgh'}></CartComponet>
+    <CartComponet styles={styles.cart} label={route.params.price}></CartComponet>
+    <CartComponet styles={styles.cart} label={route.params.price}></CartComponet>
     </View>
     <View style={styles.containerEnd}>
       <View style={{flex: 0.5, alignItems: 'center'}}>
-      <Text>$100.00</Text>
+      <Text>${route.params.price}</Text>
       </View>
       <View style={{flex: 0.5, alignItems: 'center'}}>
       <Button label={'Buy Now'}></Button>

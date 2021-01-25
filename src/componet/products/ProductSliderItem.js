@@ -11,7 +11,6 @@ import {
 const {width, height} = Dimensions.get('window');
 
 const ProductSliderItem = ({item, onPress}) => {
-  console.warn(item.url)
   const styles = StyleSheet.create({
   container: {
     backgroundColor: '#5fa3b5',
