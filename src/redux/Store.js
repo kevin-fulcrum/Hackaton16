@@ -1,14 +1,7 @@
 import AsyncStorage from '@react-native-community/async-storage';
-import {createStore, applyMiddleware, compose} from 'redux';
-import {createNetworkMiddleware} from 'react-native-offline';
-import thunk from 'redux-thunk';
+import {createStore, compose} from 'redux';
 import {persistStore, persistReducer} from 'redux-persist';
-import {createLogger} from 'redux-logger';
 import getRootReducer from '../redux/Reducer';
-
-const networkMiddleware = createNetworkMiddleware({
-  queueReleaseThrottle: 200,
-});
 
 const persistConfig = {
   key: 'root',
@@ -25,7 +18,6 @@ export default () => {
   const store = createStore(
     persistedReducer,
     undefined,
-    componseEnhancer(applyMiddleware(networkMiddleware, createLogger(), thunk)),
   );
 
   const persistor = persistStore(store);
