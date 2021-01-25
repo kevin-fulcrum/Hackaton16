@@ -42,7 +42,7 @@ const styles=StyleSheet.create({
 const Dettalle=({navigation, route})=>{
   const dispatch = useDispatch()
   const orderFun = async()=>{
-      await dispatch(Action.setCartProduct(route.params))
+    await dispatch(Action.setCartProduct(route.params))
     navigation.navigate('Cart',route.params)
   }  
   return(

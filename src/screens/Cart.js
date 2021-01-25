@@ -2,6 +2,7 @@ import React from 'react'
 import {StyleSheet, View, Text} from 'react-native'
 import CartComponet from '../componet/cart/CartComponet'
 import Button from '../componet/button/Button'
+import { useSelector } from 'react-redux'
 
 const styles=StyleSheet.create({
   contanier:{
@@ -16,7 +17,8 @@ const styles=StyleSheet.create({
 })
 
 const Cart=({route})=>{
-  console.warn(route)
+  const carData = useSelector((state)=>state.ProductReducer);
+  console.warn(carData)
   return(
     <>
     <View style={styles.contanier}>
