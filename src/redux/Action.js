@@ -18,7 +18,7 @@ const getCartOrder = (data) => {
 const setCartProduct = (data) => {
   return async (dispatch, getState) => {
     const product = await getState().ProductReducer.products;
-    console.warn(product)
+    
     if (product.length >= 0) {
       const cartProducts = product.concat(data);
       dispatch(setCartOrder(cartProducts));
@@ -29,6 +29,7 @@ const setCartProduct = (data) => {
 const getCartProduct = () => {
   return async (dispatch, getState) => {
     const products = await getState().ProductReducer.products;
+    console.warn(products)
     dispatch(getCartOrder(products));
   };
 };

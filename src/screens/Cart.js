@@ -18,7 +18,7 @@ const styles=StyleSheet.create({
 
 const Cart=({route})=>{
   const carData = useSelector((state)=>state.ProductReducer);
-  console.warn(carData)
+  console.warn('ESTE ES?',carData)
   return(
     <>
     <View style={styles.contanier}>
@@ -27,7 +27,7 @@ const Cart=({route})=>{
     </View>
     <View style={styles.containerEnd}>
       <View style={{flex: 0.5, alignItems: 'center'}}>
-      <Text>${route.params.price}</Text>
+      <Text>${carData.products[0].price}</Text>
       </View>
       <View style={{flex: 0.5, alignItems: 'center'}}>
       <Button label={'Buy Now'}></Button>
