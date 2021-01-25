@@ -5,14 +5,15 @@ import {windowWidth,windowHeight} from '../Dimensions'
 const styles=StyleSheet.create({
     container: {
         backgroundColor: '#5fa3b5',
-        borderRadius: 80,
-        width: windowWidth/1.4,
+        borderRadius: 10,
+        width: windowWidth/2.1,
         height: windowHeight/20,
         justifyContent: 'center',
-        alignItems: 'center' 
+        alignItems: 'center',
+        marginHorizontal: 2
     },
     text: {
-        fontSize: 20,
+        fontSize: 15,
         color: '#ffffff',
     }
 

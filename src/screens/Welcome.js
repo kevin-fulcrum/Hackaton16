@@ -6,11 +6,11 @@ import {DataPopular} from '../resourse/DataPopular'
 
 const scrollX = new Animated.Value(0);
 const onPress = () => {
-
+    navigation.navigate('Detalle')
 };
 
 const { width, height } = Dimensions.get('window')
-const Welcome = () => {
+const Welcome = ({navigation}) => {
     return(
         <View style={{flex: 1}}>
             <View style={{ marginLeft:20 , marginTop: 100}}>
@@ -27,7 +27,7 @@ const Welcome = () => {
                 decelerationRate="fast"
                 showsHorizontalScrollIndicator={false}
                 renderItem={(item) => {
-                    return <ProductSliderItem item={item.item} onPress={onPress} />;
+                    return <ProductSliderItem item={item.item} onPress={()=>{navigation.navigate('Detalle')}}/>;
                 }}
                 onScroll={Animated.event([
                     {nativeEvent: {contentOffset: {x: scrollX}}}],

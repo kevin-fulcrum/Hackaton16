@@ -14,7 +14,7 @@ const ProductSliderItem = ({item, onPress}) => {
   console.warn(item.url)
   const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'gray',
+    backgroundColor: '#5fa3b5',
     height: height/3.5,
     borderRadius: 10,
     flexDirection: 'column',
@@ -34,10 +34,11 @@ const ProductSliderItem = ({item, onPress}) => {
   itemTitle: {
     fontSize: 20,
     fontWeight: 'bold',
-    marginLeft: 20
+    marginLeft: 20,
+    color: '#e4eff3'
   },
   itemPrice: {
-    color: '#212121',
+    color: '#e4eff3',
     fontSize: 20,
     fontWeight: '300',
     marginLeft: 20
@@ -45,7 +46,7 @@ const ProductSliderItem = ({item, onPress}) => {
 });
 
   return (
-      <TouchableOpacity onPress={onPress}>
+    <TouchableOpacity onPress={onPress}>
     <View style={styles.container}>
       <View style={styles.cont1}></View>
         <Image
@@ -57,7 +58,7 @@ const ProductSliderItem = ({item, onPress}) => {
         <Text style={styles.itemTitle}>{item.descripcion}</Text>
         <Text style={styles.itemPrice}>${item.price}</Text>
     </View>
-      </TouchableOpacity>
+    </TouchableOpacity>
   );
 };
 
