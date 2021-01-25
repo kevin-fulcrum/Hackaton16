@@ -29,7 +29,6 @@ const setCartProduct = (data) => {
 const getCartProduct = () => {
   return async (dispatch, getState) => {
     const products = await getState().ProductReducer.products;
-    console.warn(products)
     dispatch(getCartOrder(products));
   };
 };

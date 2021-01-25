@@ -36,6 +36,14 @@ const styles=StyleSheet.create({
         flex: 0.12,
         flexDirection: 'row',
         marginHorizontal: 7
+    },
+    texto:{
+        fontSize: 20,
+        padding: 20
+    },
+    textoDetalle:{
+        fontSize: 15,
+        padding: 20
     }
 })
 
@@ -55,7 +63,8 @@ const Dettalle=({navigation, route})=>{
         </View>
     <View style={styles.detalle}>
         <View style={styles.datosDetalle}>
-        <Text>{route.params.descripcion}</Text>
+        <Text style={styles.texto}>{route.params.descripcion}</Text>
+        <Text style={styles.textoDetalle}>{route.params.detalle}</Text>
         </View>
         <View style={styles.botones}>
         <Button label={'$30'}></Button>
