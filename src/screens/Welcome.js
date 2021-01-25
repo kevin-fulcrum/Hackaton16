@@ -3,6 +3,7 @@ import { View, Dimensions, FlatList, Animated, Text } from 'react-native'
 import ProductSliderItem from '../componet/products/ProductSliderItem'
 import {Data} from '../resourse/Data'
 import {DataPopular} from '../resourse/DataPopular'
+import { useSelector } from 'react-redux'
 
 const scrollX = new Animated.Value(0);
 const onPress = () => {
@@ -11,6 +12,8 @@ const onPress = () => {
 
 const { width, height } = Dimensions.get('window')
 const Welcome = ({navigation}) => {
+  const carData = useSelector((state)=>state.ProductReducer);
+  console.warn(carData);
     return(
         <View style={{flex: 1}}>
             <View style={{ marginLeft:20 , marginTop: 50}}>
@@ -40,7 +43,7 @@ const Welcome = ({navigation}) => {
             </View>
             <View style={{flex: 0.5}}>
                 <FlatList
-                data={DataPopular}
+                data={carData.products}
                 keyExtractor={(item, index) => 'key' + index}
                 horizontal
                 scrollEnabled
